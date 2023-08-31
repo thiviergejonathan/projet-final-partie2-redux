@@ -1,7 +1,8 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Route, Routes } from "react-router-dom";
-import Search from "./search/Search/Search";
-import Quotes from "./results/components/Quotes/Quotes";
+import Categories from "./components/Categories/Categories";
+import Category from "./components/Category/Category";
+import { Link } from 'react-router-dom';
 
 const client = new QueryClient();
 
@@ -9,8 +10,8 @@ function App() {
   return (
     <QueryClientProvider client={client}>
       <Routes>
-        <Route path="/" element={<Search />} />
-        <Route path="/results/:character" element={<Quotes />} />
+        <Route path="/" element={<Categories />} />
+        <Route path="/category/:id" element={<Category />} />
       </Routes>
     </QueryClientProvider>
   );
