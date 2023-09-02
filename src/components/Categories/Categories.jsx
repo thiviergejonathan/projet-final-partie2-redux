@@ -13,10 +13,10 @@ const Categories = () => {
 
     return (
         <div>
-            <h1>Liste des catégories</h1>
+            <h1>Liste des catégories (Ceci est la page d'acceuil)</h1>
             <section>
                 <ul>
-                    {data && data.categories.map((category) => <Category category={category} key={category.idCategory}/>)}
+                    {data && data.categories.map((category) => <Category category={category} key={category.strCategory}/>)}
                 </ul>
             </section>
         </div>

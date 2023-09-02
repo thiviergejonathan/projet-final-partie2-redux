@@ -6,8 +6,8 @@ class CategoriesService {
 		if (!response.ok) {
 			throw new Error(`CategoriesService.getCategories failed, HTTP status ${response.status}`);
 		}
-
 		const categories = await response.json();
+		console.log(categories);
 		return categories;
 	}
 }
