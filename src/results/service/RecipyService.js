@@ -1,8 +1,8 @@
 class RecipyService {
-	baseUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+	baseUrl = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
-	async getRecipy(name) {
-		const response = await fetch(`${this.baseUrl}${name}`);
+	async getRecipy(id) {
+		const response = await fetch(`${this.baseUrl}${id}`);
 		if (!response.ok) {
 			throw new Error(`RecipyService.getRecipy failed, HTTP status ${response.status}`);
 		}
