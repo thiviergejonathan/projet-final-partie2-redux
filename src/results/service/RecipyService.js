@@ -7,7 +7,7 @@ class RecipyService {
 			throw new Error(`RecipyService.getRecipy failed, HTTP status ${response.status}`);
 		}
 		const recipy = await response.json();
-		console.log(recipy);
+		// console.log(recipy);
 		return recipy;
 	}
 }

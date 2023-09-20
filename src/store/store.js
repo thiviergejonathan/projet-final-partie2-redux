@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import authReducer from '../auth/store/authSlice'; to delete
-// import peopleReducer from '../people/store/peopleSlice';
+import recipyReducer from '../components/Recipy/store/recipySlice';
 import favoriteReducer from '../favorites/store/favoritesSlice';
 
 export default configureStore({
 	reducer: {
-		// auth: authReducer, to delete
-		// people: peopleReducer,
+		recipy: recipyReducer,
 		favorites: favoriteReducer,
 	},
 });

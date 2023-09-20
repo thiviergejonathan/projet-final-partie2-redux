@@ -6,6 +6,10 @@ import RecipyService from '../../results/service/RecipyService';
 import IngredientAndMeasure from '../IngredientAndMeasure.jsx/IngredientAndMeasure';
 'use client';
 import { Accordion } from 'flowbite-react';
+import FavoriteButton from '../../favorites/components/FavortieButton/FavoriteButton';
+import { useDispatch } from "react-redux";
+import { updateRecipy } from "../../components/Recipy/store/recipySlice";
+import { useEffect } from "react";
 
 const recipyService = new RecipyService();
 
@@ -16,6 +20,12 @@ const Recipy = () => {
         queryKey: ["recipy"],
         queryFn: () => recipyService.getRecipy(params.id),
     });
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(updateRecipy(data));
+      }, [dispatch, data]);    
       
     const meal = data && data.meals[0];
     
@@ -35,6 +45,7 @@ const Recipy = () => {
         <Link className='underline text-blue-600' to="/">Retour à la page d'accueil</Link>
         <h1 className='font-bold text-lg'>{meal && meal.strMeal}</h1>
         <h2 className='font-bold text-md'>{meal && meal.strCategory}</h2>
+        <FavoriteButton recipy={meal && meal} />
         <img className='mt-5' src={meal && meal.strMealThumb} alt={meal && meal.strMeal} />
 
         <Accordion collapseAll className='my-10'>
