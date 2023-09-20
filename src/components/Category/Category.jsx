@@ -17,7 +17,9 @@ const Category = () => {
 
   return (
     <section>
-        <Link className='underline text-blue-600' to="/">Retour à la page d'accueil</Link>
+        <Link className='underline text-blue-600' to="/">Retour à la page d'accueil</Link><br/>
+        <Link className='underline text-blue-600' to="/favorites">Mes favoris</Link>
+
         <h1 className='font-bold text-lg'>Recettes de la catégorie</h1>
         <ul>
             {data && data.meals.map((recipy) => <Recipy recipy={recipy} key={recipy.strMeal}/>)}

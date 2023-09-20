@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Recipy = ({ recipy }) => {
   return (
-    <li>
+    <li className='list-none'>
       <div className='mb-5 border-4'>
         <Link className='flex items-center' to={"/recipy/" + recipy.idMeal}>
           <img className="w-24" src={recipy.strMealThumb} alt={recipy.strMeal} />

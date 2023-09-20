@@ -42,7 +42,9 @@ const Recipy = () => {
 
     return (
     <section>
-        <Link className='underline text-blue-600' to="/">Retour à la page d'accueil</Link>
+        <Link className='underline text-blue-600' to="/">Retour à la page d'accueil</Link><br/>
+        <Link className='underline text-blue-600' to="/favorites">Mes favoris</Link>
+
         <h1 className='font-bold text-lg'>{meal && meal.strMeal}</h1>
         <h2 className='font-bold text-md'>{meal && meal.strCategory}</h2>
         <FavoriteButton recipy={meal && meal} />
